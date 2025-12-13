@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Youtube, Instagram, Mail, Globe, Phone, MapPin } from 'lucide-react';
 import '../styles/Sidebar.css';
-import profilePicture from "../assets/Profile-Picture.png";
+import "../assets/Profile-Picture.png";
 
 
 const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
