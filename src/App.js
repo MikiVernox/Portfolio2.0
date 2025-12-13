@@ -1,13 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Sidebar from "./components/Sidebar.jsx";
-import IntroSection from "./components/IntroSection.jsx";
-import ProjectsSection from "./components/ProjectsSection.jsx";
-import ExperienceSection from "./components/ExperienceSection.jsx";
-import EducationSection from "./components/EducationSection.jsx";
-import CertificationsSection from "./components/CertificationsSection.jsx";
-import ContactSection from "./components/ContactSection.jsx";
-
-
+import Sidebar from './components/Sidebar';
+import FloatingNav from './components/FloatingNav';
+import IntroSection from './components/IntroSection';
+import ProjectsSection from './components/ProjectsSection';
+import ExperienceSection from './components/ExperienceSection';
+import EducationSection from './components/EducationSection';
+import CertificationsSection from './components/CertificationsSection';
+import ContactSection from './components/ContactSection';
 import { profileData } from './data/portfolioData';
 
 function App() {
@@ -63,6 +62,12 @@ function App() {
           profileData={profileData}
         />
 
+        {/* Floating Navigation Bubble */}
+        <FloatingNav 
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+        />
+
         {/* Main Content */}
         <main ref={scrollContainerRef} className="main-content">
           <IntroSection 
@@ -79,6 +84,7 @@ function App() {
           <footer className="footer">
             <div className="footer-content">
               <p>© 2024 Michele Domenico Vernone</p>
+              <p>Crafted with ❤️ using React & Tailwind</p>
             </div>
           </footer>
         </main>
