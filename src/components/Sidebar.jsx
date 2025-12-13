@@ -1,7 +1,7 @@
 import React from 'react';
 import { Github, Linkedin, Youtube, Instagram, Mail, Globe, Phone, MapPin } from 'lucide-react';
 import '../styles/Sidebar.css';
-import "../assets/Profile-Picture.png";
+import "../assets/Profile-Picture.jpg";
 
 
 const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
@@ -23,7 +23,7 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             {/* MODIFICA: Usa immagine invece di emoji */}
             <div className="avatar avatar-image">
               <img 
-                src={`${process.env.PUBLIC_URL}/Profile-Picture.png`}
+                src={`${process.env.PUBLIC_URL}/Profile-Picture.jpg`}
                 alt="Michele Vernone" 
                 className="avatar-img"
               />
