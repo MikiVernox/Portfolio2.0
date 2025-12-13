@@ -23,7 +23,7 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             {/* MODIFICA: Usa immagine invece di emoji */}
             <div className="avatar avatar-image">
               <img 
-                src={profilePicture}
+                src={`${process.env.PUBLIC_URL}/Profile-Picture.png`}
                 alt="Michele Vernone" 
                 className="avatar-img"
               />
