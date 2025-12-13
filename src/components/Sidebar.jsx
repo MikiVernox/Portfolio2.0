@@ -1,6 +1,8 @@
 import React from 'react';
 import { Github, Linkedin, Youtube, Instagram, Mail, Globe, Phone, MapPin } from 'lucide-react';
 import '../styles/Sidebar.css';
+import profilePicture from "../assets/Profile-Picture.png";
+
 
 const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
   const navItems = [
@@ -21,7 +23,7 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             {/* MODIFICA: Usa immagine invece di emoji */}
             <div className="avatar avatar-image">
               <img 
-                src="/Profile-Picture.png" 
+                src={profilePicture}
                 alt="Michele Vernone" 
                 className="avatar-img"
               />
