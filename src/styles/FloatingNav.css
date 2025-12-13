@@ -1,0 +1,119 @@
+/* ====================================
+   FLOATING NAVIGATION BUBBLE
+   ==================================== */
+.floating-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  animation: slideUp 0.5s ease-out;
+}
+
+.floating-nav-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5),
+              0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.floating-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #9ca3af;
+}
+
+.floating-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.floating-nav-item.active {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.8), rgba(217, 70, 239, 0.8));
+  color: white;
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.4);
+}
+
+.floating-nav-icon {
+  font-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.floating-nav-item:hover .floating-nav-icon {
+  transform: scale(1.1);
+}
+
+.floating-nav-item.active .floating-nav-icon {
+  transform: scale(1.15);
+}
+
+.floating-nav-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Animazioni */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .floating-nav {
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    transform: none;
+  }
+
+  .floating-nav-content {
+    justify-content: space-around;
+    padding: 0.5rem;
+  }
+
+  .floating-nav-item {
+    padding: 0.5rem;
+  }
+
+  .floating-nav-item.active {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .floating-nav-label {
+    display: none;
+  }
+}
