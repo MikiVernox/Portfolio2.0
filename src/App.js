@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
+import { Sidebar } from './components/Sidebar';
 import FloatingNav from './components/FloatingNav';
 import IntroSection from './components/IntroSection';
 import ProjectsSection from './components/ProjectsSection';
