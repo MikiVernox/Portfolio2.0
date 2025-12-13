@@ -14,12 +14,18 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
   return (
     <aside className="sidebar">
       <div className="sidebar-content">
-        
         {/* Profile Section */}
         <div className="profile-section">
           <div className="avatar-wrapper">
             <div className="avatar-glow" />
-            <div className="avatar">{profileData.avatar}</div>
+            {/* MODIFICA: Usa immagine invece di emoji */}
+            <div className="avatar avatar-image">
+              <img 
+                src="/Profile-Picture.png" 
+                alt="Michele Vernone" 
+                className="avatar-img"
+              />
+            </div>
           </div>
           <h1 className="profile-name">{profileData.name}</h1>
           <p className="profile-pronouns">{profileData.pronouns}</p>
@@ -29,21 +35,6 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             <span>{profileData.location}</span>
           </div>
         </div>
-
-        {/* Navigation */}
-        <nav className="nav-menu">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => scrollToSection(item.id)}
-              className={`nav-item ${activeSection === item.id ? 'active' : ''}`}
-            >
-              <span className="nav-icon">{item.icon}</span>
-              <span>{item.label}</span>
-              {activeSection === item.id && <div className="nav-indicator" />}
-            </button>
-          ))}
-        </nav>
 
         {/* Contact */}
         <div className="contact-section">
