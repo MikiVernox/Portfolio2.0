@@ -163,9 +163,9 @@
    CONTACT SECTION
    ==================================== */
 .contact-section {
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 0.5rem;
+  padding: 0;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.05);
 }
 
 .section-title {
@@ -178,16 +178,17 @@
 }
 
 .contact-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex-direction: row;
+  border: auto;
   gap: 0.5rem;
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.875rem;
+  display: grid;
+  align-items: left;
+  gap: 0.3rem;
+  font-size: 0.400rem;
   color: #d1d5db;
   text-decoration: none;
   transition: color 0.3s;
@@ -214,7 +215,7 @@
 }
 
 .contact-text {
-  font-size: 0.7rem;
+  font-size: 0.5rem;
   line-height: 1.3;
   word-break: break-all;
 }

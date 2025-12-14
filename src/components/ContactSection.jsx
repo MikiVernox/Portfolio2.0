@@ -14,7 +14,7 @@ const ContactSection = () => {
             Let's Work Together
           </h2>
           <p className="text-xl text-gray-400 mb-10">
-            Hai un progetto in mente? Sono sempre aperto a nuove collaborazioni e opportunità interessanti.
+            Do you have a project in mind? I'm always open to new collaborations and exciting opportunities.
           </p>
           <a
             href={`mailto:${profile.email}`}

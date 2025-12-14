@@ -16,9 +16,9 @@ const IntroSection = () => {
 
         <FadeInSection delay={100}>
           <h2 className="text-5xl md:text-6xl font-bold mb-8 leading-tight">
-            Creo esperienze di gioco
+            Let's build something amazing together.
             <span className="block bg-gradient-to-r from-purple-400 via-fuchsia-400 to-pink-400 bg-clip-text text-transparent">
-              coinvolgenti e innovative
+              I can help you bring your ideas to life.
             </span>
           </h2>
         </FadeInSection>

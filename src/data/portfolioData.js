@@ -5,7 +5,7 @@ export const profileData = {
   title: "Game Developer",
   location: "Bari, Italy",
   email: "vernonemichele@proton.me",
-  website: "solo.to",
+  website: "solo.to/mikivernox",
   phone: "+39 392 956 292",
   avatar: "👨‍💻",
   intro: "Hi! I'm Michele Domenico Vernone, a Game Developer with a passion for learning and acquiring new knowledge.",
@@ -13,7 +13,7 @@ export const profileData = {
   skills: {
     languages: ["C#", "C++", "Python", "GDScript"],
     engines: ["Unity", "Unreal Engine 5", "Godot", "RPGMaker"],
-    tools: ["Git", "Fork", "Visual Studio", "Aseprite"]
+    tools: ["Git", "GitHub", "Fork", "Visual Studio", "Aseprite", "Trello"]
   }
 };
 
@@ -25,6 +25,8 @@ export const projects = [
     description: "This is a 3D platformer game developed using Unreal Engine 5, programmed in blueprints.\n \nThe game features obstacles, collectibles and enemies to defeat.",
     tags: ["Unreal Engine 5", "Blueprint", "Single Player"],
     gradient: "from-violet-500/10 via-purple-500/10 to-fuchsia-500/10",
+    link: "https://drive.google.com/file/d/1--uCQ5ndHT3ahnJhcFeXjyDzUwxbeR53/view",
+    videoId: "cphixyuUIOw?autoplay=1&mute=1&loop=1&playlist=cphixyuUIOw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1",
     accentColor: "violet"
   },
   // altri progetti...
@@ -34,6 +36,8 @@ export const projects = [
     type: "Unreal Engine 5 • C++ • 2023",
     description: "This game is developed on Unreal Engine 5, programmed in C++.\n\nThis is a 3D puzzle game, featuring intricate puzzles and collectibles.",
     tags: ["Unreal Engine 5", "C++", "Single Player"],
+    link: "https://github.com/MikiVernox/UE5_CPP_EXAM/tree/Dev",
+    videoId: "bd5ba8WMeaI?autoplay=1&mute=1&loop=1&playlist=bd5ba8WMeaI&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1",
     gradient: "from-emerald-500/10 via-green-500/10 to-lime-500/10",
     accentColor: "emerald"
   },
@@ -44,6 +48,8 @@ export const projects = [
     type: "Custom Engine • C# • 2022",
     description: "This is a 2D game developed on a custom engine using C#, AIV 2D libraries, all programmed by myself for an academic project.\n The game features different scenes, movement point and click and with collectibles.",
     tags: ["Custom Engine", "C#", "Single Player"],
+    link: "https://drive.google.com/file/d/153Dr-GIZam_EHlXAWJbVAbqtXPmADUi-/view",
+    videoId: "VP58uTCQcfQ?autoplay=1&mute=1&loop=1&playlist=VP58uTCQcfQ&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1",
     gradient: "from-rose-500/10 via-pink-500/10 to-fuchsia-500/10",
     accentColor: "rose"
   },
@@ -52,8 +58,10 @@ export const projects = [
     id: 4,
     title: "Dungeon Of Gusto",
     type: "Unreal Engine 5 • C++ • Blueprint • 2025",
-    description: "This is a 2D space shooter game developed using Unity and C#.\n The game features different levels, enemies, power-ups and a scoring system.",
+    description: "This is a 3D isometric action game combining fast-paced combat and wave defense., developed on Unreal Engine 5.\n\nDefeat monsters to collect ingredients, then protect your food truck as it cooks dishes while surviving relentless enemy waves.",
     tags: ["Unreal Engine 5", "C++", "Blueprint", "Single Player"],
+    link: "",
+    videoId: "tk79ZL6MWhw?autoplay=1&mute=1&loop=1&playlist=tk79ZL6MWhw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1",
     gradient: "from-sky-500/10 via-blue-500/10 to-indigo-500/10",
     accentColor: "sky"
   },

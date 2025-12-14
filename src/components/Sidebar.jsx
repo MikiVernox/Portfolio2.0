@@ -12,7 +12,7 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             <div className="avatar-glow" />
             <div className="avatar avatar-image">
               <img 
-                src="./public/profile-picture.jpg" 
+                src="./profile-picture.jpg" 
                 alt="Michele Vernone" 
                 className="avatar-img"
                 onError={(e) => {
@@ -72,6 +72,14 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
             <p className="skills-category-title">Engines</p>
             <div className="skills-list">
               {profileData.skills.engines.map(skill => (
+                <span key={skill} className="skill-badge">{skill}</span>
+              ))}
+            </div>
+          </div>
+          <div className="skills-category">
+            <p className="skills-category-title">Tools</p>
+            <div className="skills-list">
+              {profileData.skills.tools.map(skill => (
                 <span key={skill} className="skill-badge">{skill}</span>
               ))}
             </div>
