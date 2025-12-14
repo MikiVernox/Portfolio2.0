@@ -1,31 +1,25 @@
 import React from 'react';
-import { Github, Linkedin, Youtube, Instagram, Mail, Globe, Phone, MapPin } from 'lucide-react';
-import '../styles/Sidebar.css';
-import ProfilePicture from '../assets/profile-picture.jpg';
-
+import { Github, Linkedin, Instagram, Mail, Globe, Phone, MapPin } from 'lucide-react';
 
 const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
-  const navItems = [
-    { id: 'intro', label: 'Intro', icon: '📖' },
-    { id: 'projects', label: 'Projects', icon: '🎮' },
-    { id: 'experience', label: 'Experience', icon: '💼' },
-    { id: 'education', label: 'Education', icon: '🎓' },
-    { id: 'certifications', label: 'Certifications', icon: '🏆' }
-  ];
-
   return (
     <aside className="sidebar">
       <div className="sidebar-content">
+        
         {/* Profile Section */}
         <div className="profile-section">
           <div className="avatar-wrapper">
             <div className="avatar-glow" />
-            {/* MODIFICA: Usa immagine invece di emoji */}
             <div className="avatar avatar-image">
               <img 
-                src={ProfilePicture}
+                src="./public/profile-picture.jpg" 
                 alt="Michele Vernone" 
                 className="avatar-img"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.parentElement.innerHTML = '👨‍💻';
+                  e.target.parentElement.style.fontSize = '3rem';
+                }}
               />
             </div>
           </div>
@@ -48,7 +42,7 @@ const Sidebar = ({ activeSection, scrollToSection, profileData }) => {
               </div>
               <span className="contact-text">{profileData.email}</span>
             </a>
-            <a href={`https://${profileData.website}`} className="contact-item">
+            <a href={`https://${profileData.website}`} className="contact-item" target="_blank" rel="noopener noreferrer">
               <div className="contact-icon">
                 <Globe size={14} />
               </div>
