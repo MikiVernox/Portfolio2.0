@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import Sidebar from "./components/Sidebar";
-import FloatingNav from './components/FloatingNav';
+import Sidebar from './components/Sidebar';
 import IntroSection from './components/IntroSection';
 import ProjectsSection from './components/ProjectsSection';
 import ExperienceSection from './components/ExperienceSection';
@@ -8,6 +7,14 @@ import EducationSection from './components/EducationSection';
 import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
 import { profileData } from './data/portfolioData';
+
+// Importa FloatingNav solo se esiste, altrimenti usa null
+let FloatingNav = null;
+try {
+  FloatingNav = require('./components/FloatingNav').default;
+} catch (e) {
+  console.log('FloatingNav not found, using sidebar navigation');
+}
 
 function App() {
   const [activeSection, setActiveSection] = useState('intro');
@@ -62,11 +69,13 @@ function App() {
           profileData={profileData}
         />
 
-        {/* Floating Navigation Bubble */}
-        <FloatingNav 
-          activeSection={activeSection}
-          scrollToSection={scrollToSection}
-        />
+        {/* Floating Navigation Bubble - Solo se esiste */}
+        {FloatingNav && (
+          <FloatingNav 
+            activeSection={activeSection}
+            scrollToSection={scrollToSection}
+          />
+        )}
 
         {/* Main Content */}
         <main ref={scrollContainerRef} className="main-content">
