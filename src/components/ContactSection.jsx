@@ -1,24 +1,35 @@
-import React from "react";
-import portfolioData from "../data/portfolioData";
-import FadeInSection from "./FadeInSection";
-import { Mail, ArrowUpRight } from "lucide-react";
+import React from 'react';
+import { Mail, ArrowUpRight } from 'lucide-react';
+import FadeInSection from './FadeInSection';
 
-const ContactSection = () => {
-  const { profile } = portfolioData;
-
+const ContactSection = ({ profileData }) => {
   return (
-    <section id="contact" className="px-16 py-32">
+    <section className="contact-section">
       <FadeInSection>
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Work Together
-          </h2>
-          <p className="text-xl text-gray-400 mb-10">
-            Do you have a project in mind? I'm always open to new collaborations and exciting opportunities.
+        <div className="contact-content">
+          
+          {/* Immagine con crediti artista */}
+          <div className="contact-image-wrapper">
+            <img 
+              src="./oni_ill.png" 
+              alt="Contact illustration"
+              className="contact-image"
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+            <div className="contact-image-credits">
+              <p>Artwork by <a href="https://instagram.com/artist" target="_blank" rel="noopener noreferrer">@artist_name</a></p>
+            </div>
+          </div>
+
+          <h2 className="contact-title">Let's Work Together</h2>
+          <p className="contact-text">
+            Do you have an exciting ptoject in mind, need assistance, or just want to say hello? Feel free to reach out! I'm always open to discussing new opportunities and collaborations.
           </p>
           <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-500 to-fuchsia-500 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105"
+            href={`mailto:${profileData.email}`}
+            className="contact-button"
           >
             <Mail size={24} />
             Get in Touch

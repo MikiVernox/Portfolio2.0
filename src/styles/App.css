@@ -2,7 +2,7 @@
    TAILWIND IMPORTS
    ==================================== */
 @tailwind base;
-@tailwind Components;
+@tailwind components;
 @tailwind utilities;
 
 /* ====================================
@@ -109,8 +109,14 @@ body {
    RESPONSIVE
    ==================================== */
 @media (max-width: 1024px) {
+  /* Nascondi sidebar su tablet/mobile */
+  .sidebar {
+    display: none;
+  }
+
   .main-content {
     margin-left: 0;
+    padding-bottom: 6rem; /* Spazio per FloatingNav */
   }
 }
 
@@ -119,5 +125,10 @@ body {
     flex-direction: column;
     gap: 0.5rem;
     text-align: center;
+  }
+
+  /* Main content con più padding su mobile */
+  .main-content {
+    padding-bottom: 7rem;
   }
 }

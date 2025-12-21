@@ -62,8 +62,8 @@ export const projects = [
     tags: ["Unreal Engine 5", "C++", "Blueprint", "Single Player"],
     link: "",
     videoId: "tk79ZL6MWhw?autoplay=1&mute=1&loop=1&playlist=tk79ZL6MWhw&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1",
-    gradient: "from-sky-500/10 via-blue-500/10 to-indigo-500/10",
-    accentColor: "sky"
+    gradient: "from-orange-500/10 via-red-500/10 to-yellow-500/10",
+    accentColor: "orange"
   },
 ];
 
@@ -77,6 +77,37 @@ export const education = [
 
 export const certifications = [
   // certificazioni...
+  {
+    id: 1,
+    name: "First year Game Developer Certificate", 
+    issuer: "AIV01 - Accademia Italiana Videogiochi",
+    year: "2023",
+    image: "./First_Year_Certificate.png"
+  },
+
+  {
+    id: 2,
+    name: "Second year Game Developer Certificate",
+    issuer: "AIV01 - Accademia Italiana Videogiochi",
+    year: "2024",
+    image: "./Second_Year_Certificate.png"
+  },
+  
+  {
+    id: 3,
+    name: "Third year Game Developer Certificate",
+    issuer: "AIV01 - Accademia Italiana Videogiochi",
+    year: "2025",
+    image: "./Third_Year_Certificate.png"
+  },
+
+  {
+    id: 4,
+    name: "Soft Skills Certificate",
+    issuer: "AIV01 - Accademia Italiana Videogiochi",
+    year: "2024",
+    image: "./SK_Year_Certificate.png"
+  },
 ];
 
 // Default export (per i componenti che importano portfolioData)

@@ -263,7 +263,6 @@
   font-weight: 500;
 }
 
-
 /* ====================================
    EXPERIENCE SECTION
    ==================================== */
@@ -404,57 +403,92 @@
    ==================================== */
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   max-width: 80rem;
 }
 
 .certification-card {
-  padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 0.75rem;
   transition: all 0.3s;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .certification-card:hover {
   border-color: rgba(139, 92, 246, 0.3);
   background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.03);
+}
+
+/* Immagine preview certificato */
+.certification-image-preview {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.certification-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.certification-card:hover .certification-img {
   transform: scale(1.05);
+}
+
+.certification-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.certification-card:hover .certification-overlay {
+  opacity: 1;
+}
+
+.certification-view-text {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* Info certificato */
+.certification-info {
+  padding: 1.5rem;
 }
 
 .certification-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: start;
   margin-bottom: 0.75rem;
-}
-
-.certification-icon {
-  width: 3rem;
-  height: 3rem;
-  background: linear-gradient(to bottom right, #a855f7, #d946ef);
-  border-radius: 0.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  transition: transform 0.3s;
-}
-
-.certification-card:hover .certification-icon {
-  transform: scale(1.1);
 }
 
 .certification-year {
   font-size: 0.75rem;
   color: #9ca3af;
+  padding: 0.25rem 0.75rem;
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 9999px;
 }
 
 .certification-name {
   font-weight: bold;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
   transition: color 0.3s;
+  font-size: 1rem;
 }
 
 .certification-card:hover .certification-name {
@@ -466,17 +500,134 @@
   color: #9ca3af;
 }
 
+/* Modal per certificato ingrandito */
+.certification-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 2rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.certification-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  animation: slideUp 0.3s ease-out;
+}
+
+.certification-modal-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.certification-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(90deg);
+}
+
+.certification-modal-img {
+  max-width: 100%;
+  max-height: 70vh;
+  border-radius: 1rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.certification-modal-info {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: white;
+}
+
+.certification-modal-info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.certification-modal-info p {
+  color: #9ca3af;
+}
+
 /* ====================================
    CONTACT SECTION
    ==================================== */
 .contact-section {
-  padding: 1rem 1rem;
+  padding: 2rem 1.5rem;
 }
 
 .contact-content {
   max-width: 64rem;
   margin: 0 auto;
   text-align: center;
+}
+
+/* Immagine con crediti */
+.contact-image-wrapper {
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto 3rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.contact-image {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  transition: transform 0.3s;
+}
+
+.contact-image-wrapper:hover .contact-image {
+  transform: scale(1.05);
+}
+
+.contact-image-credits {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.contact-image-wrapper:hover .contact-image-credits {
+  opacity: 1;
+}
+
+.contact-image-credits p {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+.contact-image-credits a {
+  color: #a855f7;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-image-credits a:hover {
+  text-decoration: underline;
 }
 
 .contact-title {
@@ -500,7 +651,7 @@
   border: none;
   border-radius: 0.75rem;
   font-weight: bold;
-  font-size: 1.125rem;
+  font-size: 1.120rem;
   color: white;
   cursor: pointer;
   text-decoration: none;
@@ -515,6 +666,16 @@
 /* ====================================
    RESPONSIVE
    ==================================== */
+@media (max-width: 1024px) {
+  .section {
+    padding: 4rem 2rem;
+  }
+
+  .intro-title {
+    font-size: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 3rem 1.5rem;
@@ -540,18 +701,42 @@
     font-size: 2rem;
   }
 
-    /* Projects responsive - Video sopra su mobile */
+  .contact-image-wrapper {
+    max-width: 300px;
+  }
+
+  /* Projects responsive - Video sopra su mobile */
   .project-card {
     flex-direction: column;
+    padding: 1.5rem;
   }
 
   .project-video-container {
     width: 100%;
     height: auto;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio su mobile */
+    padding-bottom: 56.25%;
   }
 
   .project-video {
     position: absolute;
+  }
+
+  .project-content {
+    gap: 0.75rem;
+  }
+
+  /* Education cards più compatte */
+  .education-card {
+    padding: 1.5rem;
+  }
+
+  /* Contact section più compatta */
+  .contact-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .contact-button {
+    width: 100%;
+    justify-content: center;
   }
 }

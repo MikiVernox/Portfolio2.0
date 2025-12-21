@@ -4,7 +4,6 @@ const FloatingNav = ({ activeSection, scrollToSection }) => {
   const navItems = [
     { id: 'intro', icon: '📖', label: 'Intro' },
     { id: 'projects', icon: '🎮', label: 'Projects' },
-    { id: 'experience', icon: '💼', label: 'Experience' },
     { id: 'education', icon: '🎓', label: 'Education' },
     { id: 'certifications', icon: '🏆', label: 'Certifications' }
   ];

@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
+import FloatingNav from './components/FloatingNav';
 import IntroSection from './components/IntroSection';
 import ProjectsSection from './components/ProjectsSection';
-import ExperienceSection from './components/ExperienceSection';
 import EducationSection from './components/EducationSection';
 import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
@@ -17,7 +17,7 @@ function App() {
       const container = scrollContainerRef.current;
       if (!container) return;
       
-      const sections = ['intro', 'projects', 'experience', 'education', 'certifications'];
+      const sections = ['intro', 'projects', 'education', 'certifications'];
       sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -64,13 +64,17 @@ function App() {
           profileData={profileData}
         />
 
+        <FloatingNav 
+          activeSection={activeSection}
+          scrollToSection={scrollToSection}
+        />
+
         <main ref={scrollContainerRef} className="main-content">
           <IntroSection 
             profileData={profileData} 
             scrollToSection={scrollToSection} 
           />
           <ProjectsSection />
-          <ExperienceSection />
           <EducationSection />
           <CertificationsSection />
           <ContactSection profileData={profileData} />
