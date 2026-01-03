@@ -19,7 +19,7 @@ const ContactSection = ({ profileData }) => {
               }}
             />
             <div className="contact-image-credits">
-              <p>Artwork by <a href="https://instagram.com/artist" target="_blank" rel="noopener noreferrer">@artist_name</a></p>
+              <p>Artwork by <a href="https://www.instagram.com/bellis.art3d?igsh=MW9xd2VveTluajFhZQ==" target="_blank" rel="noopener noreferrer">@bellis.art3d</a></p>
             </div>
           </div>
 

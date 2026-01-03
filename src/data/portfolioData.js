@@ -69,6 +69,15 @@ export const projects = [
 
 export const experience = [
   // dati esperienza...
+  {
+  id: 1,
+    role: "Freelance Game Developer",
+    period: "December 2025 - January 2026",
+    company: "Umbra Interactive",
+    location: "Remote",
+    description: "Collaborated with Umbra Interactive to develop card abilities for their digital card game 'Gudnak'. Utilized Gdscript to implement unique card mechanics and ensure seamless integration within the game's existing framework.",
+    current: false,
+  },
 ];
 
 export const education = [

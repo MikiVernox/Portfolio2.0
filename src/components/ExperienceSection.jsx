@@ -1,36 +1,42 @@
-import React from "react";
-import portfolioData from "../data/portfolioData";
-import FadeInSection from "./FadeInSection";
+import React from 'react';
+import FadeInSection from './FadeInSection';
+import { experience } from '../data/portfolioData';
 
 const ExperienceSection = () => {
-  const { experience } = portfolioData;
-
   return (
-    <section id="experience" className="min-h-screen px-16 py-20">
+    <section id="experience" className="section">
       <FadeInSection>
-        <div className="flex items-center gap-3 mb-12">
-          <span className="text-3xl">💼</span>
-          <h2 className="text-3xl font-bold">Work Experience</h2>
+        <div className="section-header">
+          <span className="section-icon">💼</span>
+          <h2 className="section-heading">Work Experience</h2>
         </div>
       </FadeInSection>
 
-      <div className="max-w-4xl space-y-12">
+      <div className="experience-timeline">
         {experience.map((exp, index) => (
           <FadeInSection key={exp.id} delay={index * 100}>
-            <div className="relative pl-8 border-l-2 border-white/10 group">
-              <div
-                className={`absolute -left-2 top-0 w-4 h-4 rounded-full ${
-                  exp.current ? "bg-purple-500 animate-pulse" : "bg-gray-600"
-                }`}
-              />
-              <h3 className="text-xl font-bold group-hover:text-purple-400">
-                {exp.role}
-              </h3>
-              <p className="text-purple-400 font-medium">{exp.company}</p>
-              <p className="text-sm text-gray-400">
-                {exp.period} • {exp.location}
+            <div className="experience-item">
+              <div className={`experience-dot ${exp.current ? 'current' : ''}`} />
+              
+              <div className="experience-header">
+                <div>
+                  <h3 className="experience-title">{exp.role}</h3>
+                  <p className="experience-company">{exp.company}</p>
+                </div>
+                {exp.current && (
+                  <span className="current-badge">Current</span>
+                )}
+              </div>
+              
+              <div className="experience-meta">
+                <span>{exp.period}</span>
+                <span>•</span>
+                <span>{exp.location}</span>
+              </div>
+              
+              <p className="experience-description">
+                {exp.description}
               </p>
-              <p className="text-gray-300">{exp.description}</p>
             </div>
           </FadeInSection>
         ))}

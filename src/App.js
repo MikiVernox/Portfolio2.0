@@ -3,7 +3,7 @@ import Sidebar from './components/Sidebar';
 import FloatingNav from './components/FloatingNav';
 import IntroSection from './components/IntroSection';
 import ProjectsSection from './components/ProjectsSection';
-import EducationSection from './components/EducationSection';
+import ExperienceSection from './components/ExperienceSection';
 import CertificationsSection from './components/CertificationsSection';
 import ContactSection from './components/ContactSection';
 import { profileData } from './data/portfolioData';
@@ -17,7 +17,7 @@ function App() {
       const container = scrollContainerRef.current;
       if (!container) return;
       
-      const sections = ['intro', 'projects', 'education', 'certifications'];
+      const sections = ['intro', 'projects', 'experience', 'certifications'];
       sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -75,7 +75,7 @@ function App() {
             scrollToSection={scrollToSection} 
           />
           <ProjectsSection />
-          <EducationSection />
+          <ExperienceSection />
           <CertificationsSection />
           <ContactSection profileData={profileData} />
 
